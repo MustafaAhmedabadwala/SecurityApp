@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="Securoserv.CustomControls.CommonNavigationHeader"
+      xmlns:controls="clr-namespace:Securoserv.CustomControls"
+      x:Name="this" HeightRequest="51"
+      ColumnDefinitions="Auto,*" ColumnSpacing="20" RowDefinitions="50,0.8" RowSpacing="0"
+      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="backarrow.png" 
+               HeightRequest="25" WidthRequest="25" Margin="0"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Back_TapGestureRecognizer_Tapped"/>
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <controls:CFMediumLabel Grid.Row="0" Grid.Column="1" Text="{Binding Title, Source={x:Reference this}}"
+                            HorizontalOptions="StartAndExpand" VerticalOptions="Center" VerticalTextAlignment="Center"
+                            FontSize="{OnIdiom Phone='Medium',Tablet='Large'}" Margin="{OnPlatform Android='0,5,0,0',iOS='0'}"
+                            TextColor="{x:DynamicResource FontDark}"/>
+
+    <BoxView Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" HeightRequest="0.8"
+             BackgroundColor="LightGray" Margin="-15,0"/>
+
+</Grid>

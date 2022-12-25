@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Securoserv.View.MainTabbedPage"
+            BarBackgroundColor="#F90000" 
+            SelectedTabColor="Black"
+            UnselectedTabColor="#80FFFFFF" Shell.NavBarIsVisible="True"
+            BackgroundColor="White"
+            xmlns:customControl="clr-namespace:Securoserv.CustomControls"
+            xmlns:HomePage="clr-namespace:Securoserv.View.Home"
+            xmlns:Service="clr-namespace:Securoserv.View.Service"
+            xmlns:Profile="clr-namespace:Securoserv.View.Profile"
+            xmlns:Notification="clr-namespace:Securoserv.View.Notification">
+    <Shell.TitleView>
+        <customControl:CommonHeader/>
+    </Shell.TitleView>
+    <HomePage:HomePage Title="Home" IconImageSource="home" HeightRequest="20" WidthRequest="20" />
+    <Service:ServiceRequestListPage Title="Service" IconImageSource="service" HeightRequest="20" WidthRequest="20"/>
+    <Profile:ProfilePage Title="Profile" IconImageSource="profile" HeightRequest="20" WidthRequest="20"/>
+    <Notification:NotificationPage Title="Notification" IconImageSource="notification" HeightRequest="20" WidthRequest="20"/>
+
+</TabbedPage>

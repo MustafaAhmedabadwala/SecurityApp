@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:Securoserv.CustomControls"
+    x:Class="Securoserv.CustomControls.CommonHeader"
+    ColumnDefinitions="Auto,*,Auto" ColumnSpacing="0" Padding="0" Margin="0"
+    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+    BackgroundColor="{x:DynamicResource SecondaryTheme}">
+ 
+    <!--<StackLayout x:Name="Menu" Grid.Column="0" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="Menu.png"
+               Aspect="AspectFit" HeightRequest="25" WidthRequest="25"
+               VerticalOptions="CenterAndExpand" Margin="0"/>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Menu_TapGestureRecognizer_Tapped" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>-->
+
+    <!--<StackLayout Grid.Column="1" Margin="10,0"
+                 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        <customcontrols:CFMediumLabel Text="Securoserv"
+                                      TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+
+    </StackLayout>-->
+
+    <!--<StackLayout Grid.Column="2"
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="notification.png"
+               Aspect="AspectFit" HeightRequest="25" WidthRequest="25" Margin="10,0,10,0"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Notification_TapGestureRecognizer_Tapped" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>-->
+    
+    <StackLayout Grid.Column="2"
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="headercurved.png" HeightRequest="80" WidthRequest="80"
+               Aspect="AspectFill"/>
+        <!--<StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile_TapGestureRecognizer_Tapped" />
+        </StackLayout.GestureRecognizers>-->
+    </StackLayout>
+
+    <StackLayout Grid.Column="2"
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="defaultprofileimage.png" HeightRequest="40" WidthRequest="40"
+               Aspect="AspectFit" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,-10,0"/>
+        <!--<StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile_TapGestureRecognizer_Tapped" />
+        </StackLayout.GestureRecognizers>-->
+    </StackLayout>
+</Grid>

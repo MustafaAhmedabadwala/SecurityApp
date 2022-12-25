@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Securoserv.CustomControls"
+    x:Class="Securoserv.View.CarouselPages">
+    <ContentPage.Content>
+            <StackLayout Spacing="0" BackgroundColor="#070022">
+                <Grid RowDefinitions="*" RowSpacing="0" Margin="0" 
+                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">              
+
+                    <CarouselView Grid.Row="0" x:Name="TheCarousel"
+                                  ItemsSource="{Binding Images}"
+                                  PositionChanged="OnPositionChanged"
+                                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  Margin="0">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Image Grid.Row="0" Margin="0,0,0,0" Aspect="AspectFill"
+                                           Source="{Binding CImage}" />
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <controls:CFMediumButton Grid.Row="0" x:Name="lblSkip"
+                         HorizontalOptions="End" VerticalOptions="Start" FontSize="12"
+                         Text="Skip" TextColor="White" BackgroundColor="{x:DynamicResource PrimaryTheme}" Padding="0,0"
+                         Margin="0,20,20,0" CornerRadius="20" WidthRequest="50" HeightRequest="25"
+                         Clicked="lblSkip_Clicked">
+                    </controls:CFMediumButton>
+                    
+                    <Grid Grid.Row="0" HorizontalOptions="Center"
+                          VerticalOptions="End" Margin="0,0,0,70" >
+                        <!--<IndicatorView Grid.Column="0" x:Name="indicatorview"
+                                       IndicatorColor="LightGray"
+                                       IndicatorSize="8" Margin="0"
+                                       SelectedIndicatorColor="#0984e3"
+                                       VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand"/>-->
+                        <controls:CFMediumButton BackgroundColor="{x:DynamicResource PrimaryTheme}" x:Name="startbutton"
+                                Clicked="Next_Button_Clicked" CornerRadius="20"
+                                IsVisible="{Binding NextButtonVisibility}"
+                                Text="Get Start"
+                                TextColor="White" Margin="0,0,0,0"
+                                WidthRequest="{OnIdiom Phone=100,
+                                               Tablet=200}">
+                            <controls:CFMediumButton.FontSize>
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform
+                                        x:TypeArguments="x:Double"
+                                        Android="14"
+                                        iOS="14" />
+                                    </OnIdiom.Phone>
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform
+                                        x:TypeArguments="x:Double"
+                                        Android="24"
+                                        iOS="24" />
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </controls:CFMediumButton.FontSize>
+                            <controls:CFMediumButton.HeightRequest>
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform
+                                        x:TypeArguments="x:Double"
+                                        Android="40"
+                                        iOS="40" />
+                                    </OnIdiom.Phone>
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform
+                                        x:TypeArguments="x:Double"
+                                        Android="80"
+                                        iOS="80" />
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </controls:CFMediumButton.HeightRequest>
+                        </controls:CFMediumButton>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+

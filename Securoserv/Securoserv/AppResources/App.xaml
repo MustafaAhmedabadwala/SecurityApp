@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Securoserv.App">
+    <Application.Resources>
+        <Color x:Key="PrimaryTheme">#F90000</Color>
+        <Color x:Key="SecondaryTheme">#070022</Color>
+        <Color x:Key="FontDark">#000000</Color>
+        <Color x:Key="FontLight">#999999</Color>
+        <Color x:Key="PrimaryButtonColor">#11a8c0</Color>
+
+        <Style x:Key="labelboldstyle" TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#1b4867" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style x:Key="labelstyle" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="#1b4867" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="HeightRequest" Value="18" />
+        </Style>
+        <Style x:Key="entrystyle" TargetType="Entry">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HeightRequest" Value="{OnPlatform Android=40, iOS=30}" />
+        </Style>
+        <Style x:Key="framestyle" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="BorderColor" Value="LightGray" />
+        </Style>
+        <Color x:Key="white">#FFFFFF</Color>
+        <Color x:Key="LabelTextColor">#222222</Color>
+        <Color x:Key="TitleLabelTextColor">Black</Color>
+        <Color x:Key="SkyBlueColor">#cae8fe</Color>
+        <Color x:Key="WarningOrangeColor">#e28800</Color>
+        <Color x:Key="DetailsLabeltextcolour">#999999</Color>
+
+        <!--<Style TargetType="custom:CustomEditor">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="#000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="#000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>-->
+
+        <!--<Style TargetType="custom:XEntry">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="#000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="#000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>-->
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:Securoserv.CustomControls"
+    x:Class="Securoserv.View.Service.ServiceRequestListPage"
+    BackgroundColor="{x:DynamicResource SecondaryTheme}">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Margin="0,0">
+
+            <Grid Grid.Row="0" ColumnDefinitions="*,*,*" Margin="10,20,0,20" Padding="0" ColumnSpacing="0">
+                <Image Grid.Column="0" Source="curvedRectangleSmall.png" Aspect="AspectFill"/>
+                <StackLayout Grid.Column="0" Orientation="Vertical" Margin="0,0,0,10" Spacing="0"
+                             HorizontalOptions="Center" VerticalOptions="Center">
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="500+" FontSize="24" HorizontalOptions="Center"/>
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="New Request" FontSize="10"/>
+                </StackLayout>
+
+                <Image Grid.Column="1" Source="curvedRectangleSmall.png" Aspect="AspectFill"/>
+                <StackLayout Grid.Column="1" Orientation="Vertical" Margin="0,0,0,10" Spacing="0"
+                             HorizontalOptions="Center" VerticalOptions="Center">
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="500+" FontSize="24" HorizontalOptions="Center"/>
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="Pending Request" FontSize="10"/>
+                </StackLayout>
+
+                <Image Grid.Column="2" Source="curvedRectangleSmall.png" Aspect="AspectFill"/>
+                <StackLayout Grid.Column="2" Orientation="Vertical" Margin="0,0,0,10" Spacing="0"
+                             HorizontalOptions="Center" VerticalOptions="Center">
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="500+" FontSize="24" HorizontalOptions="Center"/>
+                    <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold"
+                                                  Text="Accepted Request" FontSize="10"/>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <customcontrols:CFMediumLabel TextColor="White" FontAttributes="Bold" Margin="20,0"
+                                          Text="Service Request List" FontSize="Small" HorizontalOptions="Start"/>
+
+                <Image Source="filter.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" 
+                       HeightRequest="20" WidthRequest="20" VerticalOptions="Start" Margin="0,0,20,0"/>
+
+            </StackLayout>
+
+            <CollectionView Grid.Row="2" ItemsSource="{Binding ServiceRequestList}" Margin="20,10,20,5"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>                      
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Frame BackgroundColor="White" CornerRadius="10" Padding="10,10,0,10" HasShadow="False"
+                                       Margin="0,5,0,5">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+
+                                        <Frame Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                               CornerRadius="5" BorderColor="Black" Padding="2,2">
+                                            <Image  Source="defaultprofileimage.png" VerticalOptions="FillAndExpand"
+                                                   Aspect="AspectFit" Margin="0,0,0,0" HeightRequest="0" WidthRequest="80"/>
+                                        </Frame>
+                                        
+                                        <StackLayout Grid.Column="1" Spacing="0">
+                                            <customcontrols:CFMediumLabel Text="{Binding customerName, StringFormat='Customer Name - {0}'}"
+                                                                          TextColor="Red" FontSize="10" FontAttributes="Bold"/>
+
+                                            <customcontrols:CFMediumLabel Text="{Binding date}"
+                                                                          TextColor="Gray" FontSize="10" />
+
+                                            <customcontrols:CFMediumLabel Text="{Binding time, StringFormat='Morning / Night - {0}'}"
+                                                                          TextColor="Gray" FontSize="10" />
+
+                                            <customcontrols:CFMediumLabel Text="{Binding address}" Margin="0,10,0,0"
+                                                                          TextColor="Black" FontSize="10" />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Vertical" Grid.Column="2" Spacing="10"
+                                                     VerticalOptions="CenterAndExpand">
+                                            <Frame BackgroundColor="Green" CornerRadius="20" Padding="5"
+                                                   HorizontalOptions="EndAndExpand" HasShadow="False"
+                                                   Margin="0,0,-10,0" WidthRequest="70">
+                                                <customcontrols:CFMediumLabel Text="Accepted" HorizontalOptions="Center"
+                                                                          TextColor="White" FontSize="12"/>
+
+                                            </Frame>
+
+                                            <Frame BackgroundColor="Red" CornerRadius="20" Padding="5"
+                                                   HorizontalOptions="EndAndExpand" HasShadow="False"
+                                                   Margin="0,0,-10,0" WidthRequest="70">
+                                                <customcontrols:CFMediumLabel Text="Decline" HorizontalOptions="Center"
+                                                                          TextColor="White" FontSize="12" />
+
+                                            </Frame>
+                                        </StackLayout>
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
+

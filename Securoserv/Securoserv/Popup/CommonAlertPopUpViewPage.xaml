@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="Securoserv.Popup.CommonAlertPopUpViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:abstractions="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+    mc:Ignorable="d"
+    x:Name="Thispage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20,0,20,20"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Frame
+                CornerRadius="20"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="10">
+
+                <StackLayout Spacing="0">
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        RowSpacing="5"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="White"
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="Center"
+                            StyleClass="DefaulDarkBlueTextColor"
+                            Text="{Binding MessageTitle}"
+                            TextColor="Black" />
+
+                        <ScrollView Orientation="Vertical" Grid.Row="1"
+                                      Grid.ColumnSpan="2">
+                            <abstractions:HtmlLabel
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                FontSize="Medium"
+                                HorizontalTextAlignment="Center"
+                                StyleClass="DefaulDarkBlueTextColor"
+                                Text="{Binding Message}"
+                                LinkColor="#0984e3"
+                                VerticalOptions="CenterAndExpand">
+                             </abstractions:HtmlLabel>
+                        </ScrollView>
+
+                        <StackLayout
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand" Margin="0,5,0,0">
+                            <Button
+                                BackgroundColor="#11a8c0"
+                                Command="{Binding CancelPopupCommand}"
+                                CornerRadius="10" Padding="0"
+                                FontSize="Medium"
+                                HorizontalOptions="CenterAndExpand"
+                                IsVisible="{Binding ShowCloseButton}"
+                                Text="{Binding CloseText}"
+                                TextColor="White"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="100" />
+                            <Button
+                                BackgroundColor="#11a8c0"
+                                Command="{Binding ApplyPopupCommand}"
+                                CornerRadius="10"
+                                FontSize="Medium"
+                                HorizontalOptions="CenterAndExpand"
+                                IsVisible="{Binding ShowApplyButton}"
+                                Text="{Binding ApplyText}"
+                                TextColor="White"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="100" />
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>
